@@ -5,7 +5,7 @@ import java.io.IOException;
 public class MyApplication {
     public static void main(String[] args) {
         // Read coordinates from file
-        Point[] points = readCoordinatesFromFile("Models");
+        Point[] points = readCoordinatesFromFile();
 
         // Create a shape with the read points
         Shape shape = new Shape(points);
@@ -16,8 +16,8 @@ public class MyApplication {
         System.out.println("Average Side: " + shape.averageSide());
     }
 
-    private static Point[] readCoordinatesFromFile(String Models) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(Models))) {
+    private static Point[] readCoordinatesFromFile() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("Models.txt"))) {
             Point[] points = new Point[10];
             String line;
             int index = 0;
